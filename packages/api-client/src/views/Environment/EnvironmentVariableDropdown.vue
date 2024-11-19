@@ -71,11 +71,13 @@ const selectVariable = (variableKey: string) => {
 const getEnvColor = (
   activeEnvironment: ActiveEntitiesStore['activeEnvironment'],
 ) => {
-  if (activeEnvironment.value) {
-    return activeEnvironment.value.color
-  }
+  if (!activeEnvironment.value) return '#8E8E8E'
 
-  return '#8E8E8E'
+  if (activeEnvironment.value.color) {
+    return activeEnvironment.value.color
+  } else {
+    return '#8E8E8E'
+  }
 }
 
 const handleArrowKey = (direction: 'up' | 'down') => {
@@ -127,7 +129,9 @@ onClickOutside(
     }"
     teleport=".scalar-client">
     <template #items>
-      <ul v-if="filteredVariables.length">
+      <ul
+        v-if="filteredVariables.length"
+        class="flex flex-col gap-px">
         <template
           v-for="(item, index) in filteredVariables"
           :key="item.key">
