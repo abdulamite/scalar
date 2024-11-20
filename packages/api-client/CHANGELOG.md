@@ -1,5 +1,11 @@
 # @scalar/api-client
 
+## 2.2.1
+
+### Patch Changes
+
+- 8066c8c: fix: displays empty state new request button in desktop only
+
 ## 2.2.0
 
 ### Minor Changes
