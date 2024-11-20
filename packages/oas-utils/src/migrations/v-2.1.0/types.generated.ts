@@ -429,7 +429,9 @@ export namespace v_2_1_0 {
     description: string
     isReadOnly: boolean
     collections: string[]
-    environments: string[]
+    environments: {
+      [x: string]: string
+    }
     hotKeyConfig?:
       | {
           modifiers: ('Meta' | 'Control' | 'Shift' | 'Alt' | 'default')[]

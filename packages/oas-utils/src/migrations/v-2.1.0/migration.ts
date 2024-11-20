@@ -332,7 +332,7 @@ export const migrate_v_2_1_0 = (data: Omit<v_0_0_0.DataRecord, 'folders'>) => {
       description: w.description ?? 'Basic Scalar Workspace',
       cookies: w.cookieUids || [],
       collections: w.collectionUids || [],
-      environments: w.environmentUids || [],
+      environments: w.environmentUids || {},
     }
     return prev
   }, {})
